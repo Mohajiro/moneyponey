@@ -224,7 +224,12 @@ function App() {
       <div className="text-purple-800">
         <div className="font-semibold text-lg">{exp.title}</div>
         <div className="text-sm text-gray-600">
-          {parseFloat(exp.summe).toFixed(2)} € — {exp.date}
+          {parseFloat(exp.summe).toFixed(2)} € —{" "}
+          {new Date(exp.date).toLocaleDateString("ru-RU", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
         </div>
       </div>
 
